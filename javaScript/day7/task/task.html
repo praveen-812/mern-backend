@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7</title>
+</head>
+
+<body>
+    <h2>events DOM</h2>
+
+    <div id="dataShowing">
+
+    </div>
+    <script>
+        <!--task 1-->
+    //     let mark = 75
+
+    //     const mypromise = new Promise((resolve, reject) => {
+
+    //         if (mark >= 35) {
+    //             resolve("student pass")
+    //         } else {
+    //             reject("student failed")
+    //         }
+    //     })
+    //     mypromise.
+    //         then((result) => {
+    //             console.log(result)
+
+
+    //         }).catch((error) => {
+    //             console.log(error)
+
+    //         })
+
+    //     <!--task 2-->
+
+    //    let username= "admin"
+    //      let password= "1234"
+
+    //     const obj= new Promise((resolve,reject)=>{
+    //        setTimeout(()=>{
+    //            if(username=="admin" && password=="1234"){
+    //             resolve("login successfull")
+    //          }else{
+    //             reject("invalid credentails")
+    //          }
+    //        },2000)
+    //     })
+    //     obj
+    //     .then((result)=>{
+    //         console.log(result)
+
+    //     }).catch((error)=>{
+    //         console.log(error)
+    //     })
+
+    //     <!--task 3-->
+
+        let productPrice=5000
+        let discount=10
+        const shop= new Promise((resolve,reject)=>{
+            if(productPrice>0){
+            let discountPrice = productPrice * discount/100
+            let finalPrice= productPrice-discountPrice
+                resolve(finalPrice)
+            }else{
+                reject("invalid price")
+            }
+        })
+        shop
+        .then((result)=>{
+            console.log(result)
+
+        }).catch((error)=>{
+            console.log(error)
+        })
+        .finally(()=>[
+            console.log(" working process finish")
+        ])
+
+        <!--task 6-->
+
+//         const show=document.getElementById("dataShowing")
+
+//         const getData = fetch("https://jsonplaceholder.typicode.com/users")
+//    if(!getData.ok){
+//     throw new Error("http"+ getData.status)
+//     return
+//    }
+         
+//        getData
+//        .then((response)=>{
+//           return response.json()            
+// ;
+//        })
+//        .then((data)=>{
+//            console.log(data)
+//            let users=data
+
+//             let myData=""
+            
+//        users.forEach(e=>{
+//           myData+=`
+//              <h2>name:${e.name}</h2>
+//           `
+//        })     
+//        show.innerHTML=myData   
+//        })
+//        .catch((error)=>{
+//          console.log("error")
+
+//        })
+
+   const show=document.getElementById("dataShowing")
+  const getData =fetch("https://jsonplaceholder.typicode.com/users")
+   if(!getData.ok){
+    throw new Error("http"+getData.status)
+    return
+   }
+  getData
+  .then((resolve)=>{
+    return resolve.json();
+  }).then((data)=>{
+    console.log(data)
+    let user=data;
+
+    let myData=""
+
+    user.forEach(element => {
+           myData+=`
+           <h2>name:${element.name}</h2>
+           
+           `
+    });
+    show.innerHTML=myData
+  }).catch((error)=>{
+    console.log(error)
+  }).finally(()=>{
+    console.log("clear")
+  })
+
+  <!--task -->
+
+
+       
+               
+
+    </script>
+
+</body>
+
+</html>

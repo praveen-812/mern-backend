@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>this is day 2 es6+</h2>
+    <script>
+        <!--destructing-->
+        // const numbers = [10, 20, 30];
+
+        // const [first, second,third] = numbers;
+
+        // console.log(first);
+
+        // console.log(third);
+
+        <!--spread and rest-->
+        const a = ["javascript"]
+        const b = [...a]
+        console.log(b)
+
+        <!---->
+        const user = {
+            name: "Arun",
+            age: 22
+        };
+        const updated = {...user, age: 23, city: "chennai", city: "madurai"};
+        console.log(updated);
+       
+
+        <!--default parameter-->
+        const greet = (name = "Guest") => {
+            console.log(`Welcome ${name}`);
+         };
+        greet();
+        greet("Arun");
+    </script>
+</body>
+
+</html>

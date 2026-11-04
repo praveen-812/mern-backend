@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7</title>
+</head>
+<body>
+    <h2>this is async and await</h2>
+
+    <div id="dataShowing">
+
+
+    </div>
+
+    <script>
+         const dataWork = async()=>{
+            
+            const show=document.getElementById("dataShowing")
+           try{
+
+             const getData = await fetch("https://jsonplaceholder.typicode.com/users")
+            
+            if(!getData.ok){
+                throw new Error("http:"+getData.status)
+                return
+            }
+            const change = await getData.json()
+            let user=change
+
+            let myData=""
+
+            user.forEach(e=>{
+                myData +=`
+                
+                 <p>name:${e.name}</p>
+                 <p>email:${e.email}</p>
+                  <p>phone:${e.phone}</p>
+                `
+            })
+             show.innerHTML=myData
+         }catch(e){
+            console.log(e)
+         }
+           }
+
+           dataWork()
+
+    </script>
+    
+</body>
+</html>

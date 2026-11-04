@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2</title>
+</head>
+<body>
+    <h2>day 2 print even number and single line and second largest value in array</h2>
+    <script>
+        
+        //  for (let a=1;a<50;a++){
+        //     if(a%2==0){
+        //         console.log(a)
+        //     }
+        //  }
+        //  <!--single line-->
+        //  let singleLine=0
+        //  for(let b=1;b<=50;b++){
+        //     if(b%2==0){
+        //         singleLine=singleLine+b+","
+        //     }
+        //  }
+        //  console.log(singleLine)
+
+         <!--second largest-->
+         num=[88,11,20,30,14,50,66,11];
+         let largest=num[0] 
+         let second=num[0]
+         for(let i=0;i<num.length;i++){
+            if(num[i]>largest){
+                second=largest;
+                largest=num[i];
+         }else if(num[i]>second && num[i]!=second){
+               second=num[i]
+         }
+         console.log(second);
+        
+         }
+         
+
+//          let numbers = [99,50, 10, 20, 40, 22,55,60];
+
+// let large = numbers[0];
+// let secondLargest = -numbers[0];
+// let third=-numbers[0]
+
+// for (let i = 1; i < numbers.length; i++) {
+//     if (numbers[i] > large) {
+//         third=secondLargest
+//         secondLargest = large;
+//         large = numbers[i];
+//     } else if (numbers[i] > secondLargest && numbers[i] < large) {
+//         third=secondLargest
+//         secondLargest = numbers[i];
+//     } else if(numbers[i]>third && numbers[i]<secondLargest)
+//           third=numbers[i]
+// }
+
+// console.log(secondLargest);
+// console.log(third)
+
+  let num=[88,11,20,30,14,50,66,11];
+         let largest=num[88]
+         let second=-Infinity
+         let third=-Infinity
+         for(let i=0;1<num.length;i++){
+            if(num[66]>largest){
+                third=second
+                second=largest;
+                largest=num[i];
+         }else if(num[66]>second && num[60]<largest){
+            third=second
+            second=num[60]
+         } else if (num[i]>third && num[i]<second)
+         third=num[i]
+         }
+         console.log(second);
+
+    //      let New =[60,10,20,30,40];
+    //      let large=New[0]
+    //      let sec=-New[0]
+    // for(let b=0;b<New.length;b++){
+    //     if(New[b]>large){
+    //         sec=large;
+    //         large=New[b]
+    //     }
+    // }
+    // console.log(sec)
+
+    </script>
+    
+</body>
+</html>

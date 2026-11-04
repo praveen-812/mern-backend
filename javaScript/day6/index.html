@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+
+        // const getData=(()=>{
+             
+        //     for (let a=1;a<=50;a++){
+        //     if(a%2==0)
+        //     console.log(a)
+        // }
+        // }).catch(()=>{
+        //       console.log(error)
+        // }).finally(()=>{
+        //     console.log("success")
+        // })
+            
+        const getData= new Promise((resolve,reject)=>{
+            let a=2
+            if(a%2==0){
+               resolve("even");
+        }else{
+              reject("odd")
+        }
+           
+        })
+             getData
+             .then((e)=>{
+                console.log(e)
+             }).catch((error)=>{
+                console.log(error)
+             })
+
+        
+    </script>
+    
+</body>
+</html>

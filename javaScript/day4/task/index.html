@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>this is task for build in functions</h2>
+    <script>
+        <!--task1-->
+        const someData = [10, 20, 30, 40];
+        let data = someData.some((someData) => someData > 35)
+        console.log(data)
+        // const data=[1,5,7,8,9,6,10];
+        // let find=data.some(()=>{
+        //     return data>10
+
+        // }); console.log(find)
+
+        <!--task 2-->
+
+        const studentData = [{student: "praveen", age: 26, scored: 56},
+        {student: "arun", age: 18, scored: 58},
+        {student: "santhosh", age: 21, scored: 65}
+        ];
+        const newEvery = studentData.every((student) => {
+            return student.scored > 50
+        });
+        console.log(newEvery)
+
+        <!--task 3-->
+
+
+        const staff = ["admin", "relationship", "teamlead"
+        ];
+
+        const currentrole = "admin"
+        const staffInclude = staff.includes(currentrole)
+
+        console.log(staffInclude)
+
+        <!--task 4 reduce-->
+
+        const employees = [{student: "praveen", age: 26, scored: 56, salary: 10000},
+        {student: "arun", age: 18, scored: 58, salary: 15000},
+        {student: "santhosh", age: 21, scored: 65, salary: 20000}]
+        const reduceEmployess = employees.reduce((acc, curr) => {
+            return acc + curr.salary
+        }, 0)
+        console.log(reduceEmployess)
+
+        <!--task 5-->
+
+        const cart = [
+            {name: "Laptop", price: 50000, qty: 1},
+            {name: "Mouse", price: 500, qty: 2},
+            {name: "Keyboard", price: 1500, qty: 1}
+        ];
+        const cartReduce = cart.reduce((acc,curr)=>{
+            return acc+curr.price * curr.qty
+        },0);
+        console.log(cartReduce)
+
+<!--task 6 filter-->
+
+
+
+        const employeesFilter = [{student: "praveen", age: 26, scored: 56, salary: 10000},
+        {student: "arun", age: 18, scored: 58, salary: 15000},
+        {student: "santhosh", age: 21, scored: 65, salary: 20000}];
+
+        const filters=employeesFilter.filter((employees)=>{
+            return employees.salary>10000});
+        console.log(filters)
+
+
+        <!--task 7 id to find-->
+ 
+         const employeesFind = [{id:1,student: "praveen", age: 26, scored: 56, salary: 10000},
+        {id:2,student: "arun", age: 18, scored: 58, salary: 15000},
+        {id:3,student: "santhosh", age: 21, scored: 65, salary: 20000}];
+
+
+        const employes=employeesFind.find((employees)=>{
+                return  employees.id==1;
+        })
+        console.log(employes)
+  <!--task 8 find index value-->
+ 
+         const employeesFindindex = [{id:1,student: "praveen", age: 26, scored: 56, salary: 10000},
+        {id:2,student: "arun", age: 18, scored: 58, salary: 15000},
+        {id:3,student: "santhosh", age: 21, scored: 65, salary: 20000}];
+
+  const indexValue=employeesFindindex.findIndex((employees)=>  {
+    return employees.id==2
+
+  })
+  console.log(indexValue)
+<!--task 9 sort-->
+
+const ascending=[1,2,3,4,5,6,7,8,9];
+const ascendingSort=ascending.sort((a,b)=>b-a)
+console.log(ascendingSort)
+
+<!--task 10 map-->
+  
+ const emplooyes = [{id:1,student: "praveen", age: 26, scored: 56, salary: 10000},
+        {id:2,student: "arun", age: 18, scored: 58, salary: 15000},
+        {id:3,student: "santhosh", age: 21, scored: 65, salary: 20000}];
+
+        const employee=emplooyes.map((name)=>{
+            return name.student;
+        });
+        console.log(employee)
+
+ 
+
+
+    </script>
+</body>
+
+</html>

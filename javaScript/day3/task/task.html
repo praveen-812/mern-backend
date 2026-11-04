@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+</head>
+
+<body>
+    <h2>interview based challenges questions</h2>
+    <script>
+        <!--task 1-->
+        const name = "Praveen";
+        const age = 26;
+        const city = "Chennai";
+        const role = "Frontend Developer";
+
+        const message = `Hello, my name is ${name}.
+I am ${age} years old.
+I live in ${city}.
+I am a ${role}.`;
+
+        console.log(message);
+
+
+        <!--task 2-->
+
+        const add = (a, b) => {
+            console.log(a + b)
+        };
+        add(10, 20)
+
+        const sub = (c, d) => {
+            console.log(c - d)
+        };
+        sub(10, 5);
+        const multiple = (e, f) => {
+            console.log(e * f)
+        };
+        multiple(5, 5);
+        const div = (g, h) => {
+            console.log(g / h);
+        }
+        div(10, 5)
+
+        <!--task 3 default parameters-->
+
+        const greet = (name, role = "developer") => {
+            console.log(`Hello ${name}, you are a ${role}`)
+        }
+        greet("praveen")
+        greet("praveen", "frontend developer")
+
+
+        <!--task 4 destructing-->
+
+        const student = {
+            Name: "Bala",
+            Age: 25,
+            course: "JavaScript",
+
+            city: "Chennai"
+        };
+        const displayStudent = ({Name, Age, course, City}) => {
+            console.log(`name:${Name},age:${Age},course:${course},City:${City}`)
+        }
+
+        displayStudent(student)
+
+        <!--task 5 same product base-->
+        const product = {
+            ProductName: "Laptop",
+            productPrice: 60000,
+            productQuantity: 2
+        };
+        const displayProduct = ({ProductName, productPrice, productQuantity}) => {
+            let total = productPrice * productQuantity
+            console.log(`${ProductName}`)
+            console.log(`price:${productPrice}`);
+            console.log(`Quantity:${productQuantity}`);
+            console.log(`total:${total}`)
+
+        }
+        displayProduct(product)
+
+        <!--task 6 spread operators-->
+        const products1 = ["Laptop", "Mouse"];
+        const products2 = ["Keyboard", "Monitor"];
+
+        let products = [...products1, ...products2]
+        console.log(products)
+
+        <!--task 7 copy and update user-->
+
+        const user = {
+            name: "Bala",
+            age: 25,
+            role: "Developer"
+        };
+
+        const updatedUser = {
+            ...user,
+            age: 26,
+            role: "Senior Developer"
+        };
+
+        console.log("Original:");
+        console.log(user.name);
+        console.log(user.age);
+        console.log(user.role);
+
+        console.log("Updated:");
+        console.log(updatedUser.name);
+        console.log(updatedUser.age);
+        console.log(updatedUser.role);
+
+
+        <!--task 8 rest parameter-->
+
+        const calculateTotal = (...price) => {
+
+            let total = 0;
+            for (let a = 0; a < price.length; a++) {total = total + price[a]} console.log(total)
+        }; calculateTotal(100, 200, 300);
+        calculateTotal(50, 100); calculateTotal(100, 200, 300, 400);
+        
+        
+        <!--task 9 user details with default values-->
+
+        const createUser = (name = "Guest", age = 18, city = "unknown") => {
+            console.log(`${name}`);
+            console.log(`${age}`);
+            console.log(`${city}`);
+
+        };
+        createUser("Bala", 25, "Chennai");
+        createUser("Bala");
+
+
+        <!--task 10 nullish coalescing and optional chaning-->
+
+        const User = {
+            name: "Bala",
+            age: 25
+        };
+        const getCity = (User) => {
+            return user.address?.city ?? "unknown city "
+
+        }
+        console.log(getCity(user))
+        user.address = {
+            city: 'chennai'
+        }
+        console.log(getCity(user))
+        getCity()
+
+        <!--task 11 user search-->
+        const users = [
+            {name: "Bala", role: "Developer"},
+            {name: "Arun", role: "Designer"},
+            {name: "Kumar", role: "Tester"}
+        ];
+
+
+        for (const user of users) {
+            const {name, role} = user;
+
+            console.log(`${name} - ${role}`)
+        }
+        <!--task 12 object literals-->
+
+        const names = "Bala";
+        const ages = 25;
+        const roles = "Developer";
+
+        const objectUser = {
+            names, ages, roles
+        }
+        console.log(objectUser)
+
+        <!--task 13 login form-->
+
+        const Users = {
+            Names: "Bala",
+            Roles: "Admin",
+            isLoggedIn: true
+        };
+
+        const {Names, Roles, isLoggedIn} = Users
+        const checkLogin = () => {
+            if (isLoggedIn) {
+                console.log(`welcome ${Names}`)
+                console.log(`roles ${Roles}`)
+            } else {
+                console.log("pls loging")
+            }
+        };
+        checkLogin()
+
+        <!--task 14 -->
+        const productElectronic = {
+            pname: "Laptop",
+            pprice: 60000,
+            pcategory: "Electronics"
+        };
+        const {pname, pprice, pcategory} = productElectronic
+        const getProductInfo = () => {
+
+             return `${pname},${pprice},${pcategory}`
+
+         
+        }
+        console.log(getProductInfo())
+        const changeData = {
+            ...productElectronic, 
+        pprice: 65000
+       };
+       console.log(`${changeData.pname},${changeData.pprice},${changeData.pcategory}`)
+      console.log(`${pprice}`)
+
+
+      <!--task 15 -->
+
+      const userFull = {
+    userName: "Bala",
+    userAge: 25,
+    UserRole: "Frontend Developer",
+    UserAddress: {
+        City: "Chennai"
+    }
+ };
+ <!--function 1-->
+ const {userName, userAge, UserRole, UserAddress} =userFull
+  const getUserName=()=>{
+  
+    return userName
+   
+
+ };   console.log(getUserName())
+  
+ <!--function 2-->
+  const getOptional=()=>{
+    return userFull.UserAddress?.City??"unknown"
+  };
+  console.log( getOptional())
+     
+
+  <!--function 3-->
+
+  const destrucing=()=>{
+    return `${userName}is a ${userAge} old ${UserRole} from ${UserAddress?.City}`
+  };
+  console.log(destrucing())
+
+  <!--function 4-->
+const updateUser=()=>{
+  const modify={...userFull,userAge:26,UserRole:"Senior Frontend Developer"}
+   return modify
+}
+  console.log(updateUser())
+
+  <!-- function 5-->
+
+
+  const usersLast = [
+
+    {
+        uname: "Arun",
+        uage: 30,
+       urole: "Backend Developer"
+    },
+    {
+        uname: "Kumar",
+        uage: 28,
+        urole: "Tester"
+    }
+];
+
+
+
+for (const userDetails of usersLast){
+    const {uname,uage,urole} = userDetails;
+       console.log(`${uname}- ${uage}`)
+}
+    </script>
+
+</body>
+
+</html>

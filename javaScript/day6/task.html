@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6</title>
+</head>
+
+<body>
+    <h2>callback function</h2>
+    <div id="dataShowing">
+        <div id="newData">
+
+        </div>
+
+    </div>
+    <script>
+        <!--callback-->
+
+        //     function main(a,b,callback){
+        //         console.log("work start")
+        //         callback(a,b)
+        //          console.log("work complete")
+        //     };
+        //     function addition(x,y){
+        //          console.log(x+y)
+        //     }
+        //      main(20,40,addition)
+        // <!--arrow function + call back-->
+        // const data=( a,b,callback)=>{
+
+        // return callback(a,b)
+
+        // };
+        // const newData=(x,y)=>{
+        // return x*y
+
+        // }
+        // console.log( data(20,10,newData))
+
+        <!--next method in this arrow-->
+        // const data=(a,b,callback)=>{
+        // return callback(a,b)
+
+        // };
+        // const next=data(10,5,(x,y)=>{
+        // return x*y
+        // })
+        // console.log(next)
+
+        // <!--object-->
+        // const student = {
+        // name: "Arun",
+        // course: "MERN",
+        // marks: 85
+        // };
+
+        // const data = (data,callback)=>{
+        // callback(data)
+        // };
+        // data(student,(result)=>{
+        // console.log("name:",result.name)
+
+        // })
+
+
+
+        <!--conditon base callback-->
+
+        // const condition=(mark,callback)=>{
+        // if(mark>50){
+        // callback("pass")
+        // }else
+        // {
+        // callback("fail")
+        // }
+
+
+        // };
+        // condition(75,(result)=>{
+        // console.log(result)
+        // })
+
+        <!-- time out -->
+        // let count=1;
+        // setInterval(()=>{
+        // console.log(count)
+        // count++
+        // },2000)
+
+        <!--promise settimeout-->
+
+        // const mypromise= new Promise((resolve,reject)=>{
+        // setTimeout(()=>{
+        // resolve("running it is work")
+        // },2000);
+        // });
+        // mypromise
+        // .then((result)=>{
+        // console.log(result)
+        // })
+
+        <!--promise use with object-->
+
+        // const mypromise = new Promise((resolve,reject)=>{
+        // const student={
+        // name:"abishek",
+        // age:23,
+        // course:"mern",
+        // skils:"skill",
+
+        // }
+        // resolve(student)
+        // })
+
+        // mypromise.then((data)=>{
+        // console.log("name:",data.name)
+
+        // })
+
+        <!--finally catch and then work with Promise-->
+
+        // const checkPayment = new Promise((resolve,reject)=>{
+        // let payment=false;
+        // if(payment){
+        // resolve({
+        // amount:5000,
+        // status:"success"
+        // });
+        // } else{
+        // reject(new Error("payment failed"))
+
+        // }
+
+        // })
+        // checkPayment.then((result)=>{
+        // console.log("amount:", result.amount)
+        // console.log("status", result.status)
+
+        // })
+        // .catch((error)=>{
+        // console.log("error:",error.message)
+        // })
+        // .finally(()=>{
+        // console.log("finally completed")
+        // })
+
+        <!--promise chaining with object-->
+
+        // Promise.resolve({
+        // name:"praveen",
+        // mark:80
+        // })
+        // .then((student)=>{
+        // console.log("name:",student.name);
+        // return student.mark>50?"pass":"fail"
+        // })
+        // .then((student)=>{
+        // console.log(student)
+        // }).catch((error)=>{
+        // console.log(error.message)
+        // })
+
+        <!--fetch-->
+        // fetch("https://dummyjson.com/products")
+        // .then((!Response.ok))
+
+        <!--normal promises-->
+
+        // const getData=()=>{
+        // return Promise. resolve ("data completed")
+
+        // };
+
+
+        <!--asyn await-->
+
+        // const getData = async () => {
+
+        // const showing= document.getElementById("dataShowing")
+
+        // try {
+
+        // const getdata = await fetch("https://dummyjson.com/products")
+        // console.log(getdata);
+
+        // const change = await getdata.json()
+
+        // let users = change.products;
+        // console.log(users)
+
+        // let myData = " "
+
+        // users.forEach(element => {
+        // myData += `
+        // <h2> username:${element.title}</h2>`
+        // })
+
+        // showing.innerHTML = myData
+        // }
+        // catch (e) {
+        // console.log(e)
+        // }
+        // }
+        // getData()
+
+
+        <!--same method-->
+
+
+        const data = async () => {
+            const showData = document.getElementById("showData")
+
+            try {
+
+
+                const getData = await fetch("https://dummyjson.com/products")
+
+                let changeData = await getData.json()
+
+                let change = changeData.products
+
+                let myData=" "
+                
+                change.forEach(element=>{
+                    myData += `
+                    <h2>${element.title}</h2>
+                    `
+                })
+                showData.innerHTML=myData
+            }
+             catch(e){
+                console.log(e)
+             }
+
+    }
+    data()
+
+
+
+    </script>
+
+</body>
+
+</html>
