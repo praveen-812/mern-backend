@@ -52,7 +52,7 @@ const Bro = () => {
                 <div>
                     <br />
                     <br />
-                    
+
 
                  <div className="flex flex-col md:flex-row 
                                       items-center bg-white rounded-2xl 
@@ -77,7 +77,7 @@ const Bro = () => {
                             <h2 className="text-2xl md:text-3xl 
                                               font-extrabold text-red-600 
                                               mb-5 tracking-wide font-serif">
-                                Outfit
+                                Group pic
                             </h2>
 
                             <p className="text-gray-700 text-base 
