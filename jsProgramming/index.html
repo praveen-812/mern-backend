@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day9</title>
+</head>
+<body>
+    <h2>prime number and fibonacci series</h2>
+    <script>
+        const prime=(...value)=>{
+            for(let a=0;a<value.length;a++){
+                if(value[a]%2==1){
+                    console.log(value[a])
+                }
+            }
+        };prime(10,22,4,5,1,13,17)
+
+        let primeNumber=" "
+        for (let b=1;b<=100;b++){
+            if(b%2==1){
+                primeNumber=primeNumber+b+" "
+                
+            }   
+        }
+        console.log(primeNumber)
+
+    
+    </script>
+    
+</body>
+</html>
